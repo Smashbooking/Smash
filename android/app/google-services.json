@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "702964672530",
+    "project_id": "smash-2159f",
+    "storage_bucket": "smash-2159f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:702964672530:android:832036c625864ba227d0cb",
+        "android_client_info": {
+          "package_name": "com.smash.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDos6U6GFG05jTUHxtPlrzWOl7oVY27TqI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

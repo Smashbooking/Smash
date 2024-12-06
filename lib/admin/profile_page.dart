@@ -1,6 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:smash/admin/edit_profile.dart';
+import 'package:smash/admin/venue_details_page.dart';
+import 'package:smash/admin/venue_form.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -10,12 +13,24 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Profile'),
+        centerTitle: true,
         backgroundColor: Colors.red,
+        actions: [
+          GestureDetector(
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const EditProfile())),
+            child: const Padding(
+              padding: EdgeInsets.only(right: 15),
+              child: Icon(Icons.edit),
+            ),
+          ),
+        ],
         leading: PopupMenuButton<String>(
           icon: const Icon(Icons.menu),
           onSelected: (value) {
@@ -44,17 +59,31 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
             ),
             const PopupMenuItem(
-              value: 'venueInfo',
+              value: 'addEvents',
               child: ListTile(
                 leading: Icon(Icons.info),
-                title: Text('Venue Information'),
+                title: Text('Add events'),
+              ),
+            ),
+            // const PopupMenuItem(
+            //   value: 'editProfile',
+            //   child: ListTile(
+            //     leading: Icon(Icons.person),
+            //     title: Text('Edit Profile'),
+            //   ),
+            // ),
+            const PopupMenuItem(
+              value: 'venueinformation',
+              child: ListTile(
+                leading: Icon(Icons.place),
+                title: Text('Enter venue information'),
               ),
             ),
             const PopupMenuItem(
-              value: 'editProfile',
+              value: 'viewvenueinformation',
               child: ListTile(
-                leading: Icon(Icons.person),
-                title: Text('Edit Profile'),
+                leading: Icon(Icons.remove_red_eye),
+                title: Text('View venue information'),
               ),
             ),
           ],
@@ -86,9 +115,9 @@ class _ProfilePageState extends State<ProfilePage> {
                 60, // Half of container height to position the profile picture halfway over it
             child: Column(
               children: [
-                CircleAvatar(
+                const CircleAvatar(
                   radius: 50,
-                  backgroundImage: const AssetImage(
+                  backgroundImage: AssetImage(
                     'assets/images/profile.jpg', // Replace with your image path
                   ),
                 ),
@@ -178,13 +207,31 @@ class _ProfilePageState extends State<ProfilePage> {
         // Navigate to Add Sports page or perform related action
         break;
       case 'venueInfo':
-        // Navigate to Venue Information page or perform related action
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const VenueDetailsPage()));
         break;
       case 'editProfile':
         Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) => const EditProfile(),
+          ),
+        );
+        break;
+      case 'viewvenueinformation':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const VenueDetailsPage(),
+          ),
+        );
+
+      case 'venueinformation':
+        String phoneNumber = _auth.currentUser?.phoneNumber ?? '';
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => VenueForm(adminPhoneNumber: phoneNumber),
           ),
         );
         break;
@@ -230,7 +277,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               ),
             ),
-            gridData: FlGridData(show: false),
+            gridData: const FlGridData(show: false),
             borderData: FlBorderData(show: false),
             barGroups: [
               for (int i = 0; i < 7; i++)

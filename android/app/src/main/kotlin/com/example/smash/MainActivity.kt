@@ -1,4 +1,4 @@
-package com.example.smash
+package com.smash.app
 
 import io.flutter.embedding.android.FlutterActivity
 

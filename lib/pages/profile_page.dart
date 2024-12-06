@@ -30,11 +30,11 @@ class ProfilePage extends StatelessWidget {
                     size: MediaQuery.of(context).size.height * 0.10,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 //username
-                Text(
+                const Text(
                   "UserName",
                   style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
                 ),
