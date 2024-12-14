@@ -3,7 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:smash/components/my_button.dart';
 import 'package:smash/components/my_textfield.dart';
-import 'package:smash/pages/home_page.dart';
+import 'package:smash/screens/home_page.dart';
 
 class ConfirmDetails extends StatefulWidget {
   const ConfirmDetails({super.key});

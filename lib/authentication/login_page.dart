@@ -8,7 +8,7 @@ import 'package:smash/admin/profile_page.dart';
 import 'package:smash/authentication/signup_page.dart';
 import 'package:smash/components/my_button.dart';
 import 'package:smash/components/my_textfield.dart';
-import 'package:smash/pages/home_page.dart';
+import 'package:smash/screens/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});

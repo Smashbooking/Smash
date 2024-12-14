@@ -8,7 +8,7 @@ import 'package:smash/authentication/login_page.dart';
 // import 'package:smash/authentication/confirm_details.dart';
 
 import 'package:smash/authentication/signup_page.dart';
-import 'package:smash/pages/home_page.dart';
+import 'package:smash/screens/home_page.dart';
 // import 'package:smash/pages/home_page.dart';
 
 Future<void> main() async {
