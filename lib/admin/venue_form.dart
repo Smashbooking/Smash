@@ -244,11 +244,11 @@ class _VenueFormState extends State<VenueForm> {
                 Center(
                   child: ElevatedButton(
                     onPressed: _saveVenue,
-                    child: const Text('Submit'),
                     style: ElevatedButton.styleFrom(
                       foregroundColor: Colors.white,
                       backgroundColor: primaryColor,
                     ),
+                    child: const Text('Submit'),
                   ),
                 ),
               ],

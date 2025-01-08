@@ -110,7 +110,7 @@ class _VenueDetailsPageState extends State<VenueDetailsPage> {
                             ),
                             Text(
                               'Price: ₹${venueData!['price'] ?? ''}',
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 20, fontWeight: FontWeight.w500),
                             ),
                           ],

@@ -7,8 +7,7 @@ class BookSportPage extends StatelessWidget {
   final String venueId;
   final String sportId;
 
-  const BookSportPage({Key? key, required this.venueId, required this.sportId})
-      : super(key: key);
+  const BookSportPage({super.key, required this.venueId, required this.sportId});
   Future<Map<String, String>> fetchVenueAndSportDetails(
       String venueId, String sportId) async {
     try {

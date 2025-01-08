@@ -56,16 +56,16 @@ class MyTile extends StatelessWidget {
           title: Text(
             text,
             style: TextStyle(
-              color: Theme.of(context).colorScheme.inversePrimary,
+              color: Colors.black,
             ),
           ),
           leading: Icon(
             icon,
-            color: Theme.of(context).colorScheme.inversePrimary,
+            color: Colors.black,
           ),
           trailing: Icon(
             Icons.arrow_forward_ios,
-            color: Theme.of(context).colorScheme.inversePrimary,
+            color: Colors.black,
             size: 18.0,
           ),
           onTap: onTap,

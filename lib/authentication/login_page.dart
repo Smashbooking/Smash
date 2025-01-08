@@ -94,12 +94,14 @@ class _LoginPageState extends State<LoginPage> {
         );
       } catch (e) {
         log('Error requesting OTP: $e');
-        ScaffoldMessenger.of(context).showSnackBar(
+        if(mounted){
+          ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text("Error requesting OTP: $e"),
             backgroundColor: Colors.red,
           ),
         );
+        }
       } finally {
         setState(() {
           isLoading = false; // Hide loading indicator

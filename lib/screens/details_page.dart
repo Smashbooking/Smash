@@ -1,14 +1,11 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-
 import '../pages/sports/book_sport_page.dart';
 
 class DetailsPage extends StatelessWidget {
   final String venueId;
 
-  const DetailsPage({Key? key, required this.venueId}) : super(key: key);
+  const DetailsPage({super.key, required this.venueId});
 
   @override
   Widget build(BuildContext context) {
@@ -164,7 +161,7 @@ class DetailsPage extends StatelessWidget {
                 const Divider(),
                 Column(
                   children: [
-                    Text('Available Sports',
+                    const Text('Available Sports',
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold)),
                     SportsColumn(venueId: venueId),
@@ -233,7 +230,7 @@ class DetailsPage extends StatelessWidget {
 class SportsColumn extends StatelessWidget {
   final String venueId;
 
-  const SportsColumn({Key? key, required this.venueId}) : super(key: key);
+  const SportsColumn({super.key, required this.venueId}) ;
 
   @override
   Widget build(BuildContext context) {
