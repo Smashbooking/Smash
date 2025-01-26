@@ -48,15 +48,15 @@ class AppTheme {
       // AppBar Theme
       appBarTheme: const AppBarTheme(
         elevation: 0,
-        backgroundColor: primaryWhite,
-        foregroundColor: primaryRed,
+        backgroundColor: Colors.red,
+        foregroundColor: primaryWhite,
         centerTitle: true,
         titleTextStyle: TextStyle(
           color: grey900,
           fontSize: 20,
           fontWeight: FontWeight.w600,
         ),
-        iconTheme: IconThemeData(color: primaryWhite),
+        iconTheme: IconThemeData(color: Colors.black),
       ),
 
       // Card Theme

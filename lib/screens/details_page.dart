@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:smash/pages/sports/booking_page.dart';
 import '../pages/sports/book_sport_page.dart';
 
 class DetailsPage extends StatelessWidget {
@@ -230,7 +231,7 @@ class DetailsPage extends StatelessWidget {
 class SportsColumn extends StatelessWidget {
   final String venueId;
 
-  const SportsColumn({super.key, required this.venueId}) ;
+  const SportsColumn({super.key, required this.venueId});
 
   @override
   Widget build(BuildContext context) {

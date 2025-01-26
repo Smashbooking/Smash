@@ -7,10 +7,10 @@ import 'package:smash/pages/view_teams.dart';
 import 'package:smash/screens/invitations_page.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../authentication/login.dart';
+import '../pages/sports/booking_list_page.dart';
 import 'display_page.dart';
 import 'details_page.dart';
 import 'profile_page.dart';
-
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -166,6 +166,12 @@ class _HomePageState extends State<HomePage> {
                 style: drawerStyle,
               ),
               onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const BookingsListPage(),
+                  ),
+                );
                 // Update the state of the app.
                 // ...
               },

@@ -7,7 +7,8 @@ class BookSportPage extends StatelessWidget {
   final String venueId;
   final String sportId;
 
-  const BookSportPage({super.key, required this.venueId, required this.sportId});
+  const BookSportPage(
+      {super.key, required this.venueId, required this.sportId});
   Future<Map<String, String>> fetchVenueAndSportDetails(
       String venueId, String sportId) async {
     try {
@@ -137,6 +138,8 @@ class BookSportPage extends StatelessWidget {
                 Center(
                   child: ElevatedButton(
                     onPressed: () {
+                      print(venueId);
+                      print(sportId);
                       // Navigate to BookingPage
                       Navigator.push(
                         context,

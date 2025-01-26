@@ -59,7 +59,7 @@ class _ConfirmDetailsState extends State<ConfirmDetails> {
       // Navigate to HomePage on successful save
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const HomePage()),
+        MaterialPageRoute(builder: (context) => const HomeScreen()),
       );
 
       ScaffoldMessenger.of(context).showSnackBar(

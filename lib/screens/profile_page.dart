@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:smash/components/my_tile.dart';
+import 'package:smash/screens/notifications_page.dart';
+import 'package:smash/screens/support.dart';
+import 'package:smash/screens/terms_and_conditions_page.dart';
+import 'package:smash/screens/user_profile.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -16,18 +20,12 @@ class ProfilePage extends StatelessWidget {
               // mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 //profile text
-                const Text(
-                  "Profile",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
                 //profile image
                 ClipRect(
                   child: Icon(
-                    Icons.person_2_outlined,
-                    size: MediaQuery.of(context).size.height * 0.10,
+                    Icons.person,
+                    size: MediaQuery.of(context).size.height * 0.20,
+                    color: Colors.black,
                   ),
                 ),
                 const SizedBox(
@@ -47,7 +45,12 @@ class ProfilePage extends StatelessWidget {
                     MyTile(
                         text: "Manage Profile",
                         icon: Icons.person,
-                        onTap: () {}),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => UserProfile()));
+                        }),
                     MyTile(
                         text: "Manage Bookings",
                         icon: Icons.book_online_outlined,
@@ -55,12 +58,32 @@ class ProfilePage extends StatelessWidget {
                     MyTile(
                         text: "Notifications",
                         icon: Icons.notifications,
-                        onTap: () {}),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const NotificationsPage()));
+                        }),
                     MyTile(
                         text: "Terms and Conditions",
                         icon: Icons.rule,
-                        onTap: () {}),
-                    MyTile(text: "Support", icon: Icons.help, onTap: () {}),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const TermsConditionsPage()));
+                        }),
+                    MyTile(
+                        text: "Support",
+                        icon: Icons.help,
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const SupportPage()));
+                        }),
                     MyTile(text: "Log Out", icon: Icons.logout, onTap: () {}),
                   ],
                 ),

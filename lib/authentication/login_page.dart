@@ -336,7 +336,7 @@ class _LoginPageState extends State<LoginPage> {
             // Navigate to User HomePage
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => const HomePage()),
+              MaterialPageRoute(builder: (context) => const HomeScreen()),
             );
           }
         }
